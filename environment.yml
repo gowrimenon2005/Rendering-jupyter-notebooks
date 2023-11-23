@@ -4,7 +4,7 @@ channels:
 dependencies:
   - matplotlib-base
   - pandas
-  - ipywidgets=7.7.2
+  - ipywidgets=8
   - voila=0.5.5
   - numpy
   - nb_conda_kernels
