@@ -1,7 +1,7 @@
 {
     "VoilaConfiguration": {
         "enable_nbextensions": true,
-        "show_tracebacks": truet,
+        "show_tracebacks": true,
         "template": "vuetify-default",
         "extension_language_mapping": {
             ".py": "python",
