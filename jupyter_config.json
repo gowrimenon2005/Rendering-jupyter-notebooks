@@ -1,7 +1,14 @@
 {
-  "VoilaConfiguration": {
-    "theme": "white",
-    "template": "gridstack"
-    "show_tracebacks": true
-  }
+    "VoilaConfiguration": {
+        "enable_nbextensions": true,
+        "show_tracebacks": true
+        "template": "vuetify-default",
+        "extension_language_mapping": {
+            ".py": "python",
+            ".jl": "julia"
+        },
+        "language_kernel_mapping": {
+            "python": "python3"
+        }
+    }
 }
