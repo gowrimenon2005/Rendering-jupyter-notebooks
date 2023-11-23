@@ -8,3 +8,8 @@ dependencies:
 - jupyterlab>=3.1
 - voila>=0.2.11
 - numpy
+runtime: python
+env: flex
+runtime_config:
+  python_version: 3
+entrypoint: voila --port=$PORT --no-browser --template vuetify-default --enable_nbextensions=True voila-vuetify.ipynb
