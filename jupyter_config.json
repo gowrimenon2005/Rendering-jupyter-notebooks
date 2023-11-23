@@ -1,0 +1,7 @@
+{
+  "VoilaConfiguration": {
+    "theme": "white",
+    "template": "gridstack"
+    "show_tracebacks": true
+  }
+}
