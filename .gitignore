@@ -2,4 +2,4 @@
 *.py
 
 # Ignore specific Python file
-example.py
+function_file.py
