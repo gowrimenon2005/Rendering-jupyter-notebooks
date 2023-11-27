@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - matplotlib-base
+  - seaborn
   - pandas
   - ipywidgets=8
   - voila=0.5.5
