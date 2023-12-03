@@ -1,16 +1,20 @@
-FROM python:3.10
+FROM continuumio/miniconda3:latest
 
 # Set the working directory
-WORKDIR /testproject
+WORKDIR /app
 
-# Copy the requirements.txt file into the container
-COPY requirements.txt .
+# Copy environment.yml to the container
+COPY environment.yml .
 
-# Install any dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Create Conda environment
+RUN conda env create -f environment.yml
 
-# Copy the Voila notebooks into the container
-COPY notebooks /testproject/notebooks
+# Activate the Conda environment
+RUN echo "conda activate my_environment" >> ~/.bashrc
+SHELL ["/bin/bash", "--login", "-c"]
+
+# Copy the notebooks into the container
+COPY notebooks /app/notebooks
 
 # Expose the port that Voila will run on
 EXPOSE 8866
