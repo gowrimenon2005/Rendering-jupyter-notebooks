@@ -13,6 +13,9 @@ RUN conda env create -f environment.yml
 RUN echo "conda activate my_environment" >> ~/.bashrc
 SHELL ["/bin/bash", "--login", "-c"]
 
+# Install voila
+RUN conda install -n my_environment voila=0.5.5
+
 # Copy the notebooks into the container
 COPY notebooks /app/notebooks
 
