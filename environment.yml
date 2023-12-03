@@ -1,4 +1,4 @@
-name: deploying-voila-notebook
+name: my_environment
 channels:
   - conda-forge
 dependencies:
