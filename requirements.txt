@@ -1,0 +1,16 @@
+matplotlib-base
+seaborn
+pandas
+ipywidgets==8
+voila==0.5.5
+numpy
+nb_conda_kernels
+jupyterlab_widgets
+nbformat
+jupyter_server
+jupyter_client
+nbconvert
+notebook
+ipykernel
+python==3
+pip
