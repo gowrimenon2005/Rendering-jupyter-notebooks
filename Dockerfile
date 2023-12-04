@@ -6,15 +6,12 @@ WORKDIR /app
 # Copy environment.yml to the container
 COPY environment.yml .
 
-# Create Conda environment
-RUN conda env create -f environment.yml
-
-# Activate the Conda environment
-RUN echo "conda activate my_environment" >> ~/.bashrc
-SHELL ["/bin/bash", "--login", "-c"]
-
-# Install voila
-RUN conda install -n my_environment voila=0.5.5
+# Create Conda environment and install voila
+RUN conda env create -f environment.yml && \
+    echo "conda activate my_environment" >> ~/.bashrc && \
+    /bin/bash --login -c "conda init" && \
+    /bin/bash --login -c "conda activate my_environment" && \
+    conda install -n my_environment voila=0.5.5
 
 # Copy the notebooks into the container
 COPY notebooks /app/notebooks
@@ -22,5 +19,5 @@ COPY notebooks /app/notebooks
 # Expose the port that Voila will run on
 EXPOSE 8866
 
-# Command to run Voila
+# Set the default command to run when the container starts
 CMD ["voila", "--port=8866", "--no-browser", "notebooks"]
