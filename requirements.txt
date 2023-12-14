@@ -4,7 +4,6 @@ pandas
 ipywidgets==8
 voila==0.5.5
 numpy
-nb_conda_kernels
 jupyterlab_widgets
 nbformat
 jupyter_server
