@@ -1,4 +1,4 @@
-matplotlib-base
+matplotlib
 seaborn
 pandas
 ipywidgets==8
