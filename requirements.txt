@@ -11,5 +11,5 @@ jupyter_client
 nbconvert
 notebook
 ipykernel
-python
+python>=3.9
 pip
