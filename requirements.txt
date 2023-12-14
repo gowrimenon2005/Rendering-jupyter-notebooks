@@ -11,5 +11,5 @@ jupyter_client
 nbconvert
 notebook
 ipykernel
-python==3
+python
 pip
