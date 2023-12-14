@@ -1,16 +1,13 @@
-FROM continuumio/miniconda3:latest
+FROM python:3.8-slim
 
 # Set the working directory
 WORKDIR /app
 
 # Copy environment.yml to the container
-COPY environment.yml .
+COPY requirements.txt .
 
-# Create Conda environment and install voila
-RUN conda env create -f environment.yml
-
-# Make RUN commands use the new environment
-SHELL ["conda", "run", "-n", "my_environment", "/bin/bash", "-c"]
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the notebooks into the container
 COPY notebooks /app/notebooks
