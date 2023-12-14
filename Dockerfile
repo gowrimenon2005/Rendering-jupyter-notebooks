@@ -16,4 +16,4 @@ COPY notebooks /app/notebooks
 EXPOSE 8866
 
 # Set the default command to run when the container starts
-CMD ["voila", "--port=8866", "--no-browser", "notebooks"]
+CMD ["voila", "--port=8866", "--no-browser", "--Voila.ip=0.0.0.0", "notebooks"]
