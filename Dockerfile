@@ -7,11 +7,10 @@ WORKDIR /app
 COPY environment.yml .
 
 # Create Conda environment and install voila
-RUN conda env create -f environment.yml && \
-    echo "conda activate my_environment" >> ~/.bashrc && \
-    /bin/bash --login -c "conda init" && \
-    /bin/bash --login -c "conda activate my_environment" && \
-    conda install -n my_environment voila=0.5.5
+RUN conda env create -f environment.yml
+
+# Make RUN commands use the new environment
+SHELL ["conda", "run", "-n", "my_environment", "/bin/bash", "-c"]
 
 # Copy the notebooks into the container
 COPY notebooks /app/notebooks
