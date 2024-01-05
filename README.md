@@ -63,50 +63,30 @@ On some READMEs, you may see small images that convey metadata, such as whether 
 ## Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-
-# Deploying the notebooks
+## Deploying the notebooks
 
 These jupyter notebooks can be deployed in a sufficient manner using docker. By doing so the notebooks can be read in as a stand alone entity, mimicing the style of an e-book. This deployment can be done by executing the following. Please read through the entire procedure before you begin. Furthermore, note that steps 1 and 2 only have to be performed the first time! 
 
-## Step 1. Install docker desktop 
+### Step 1. Install docker desktop 
 1.1 Download the docker desktop application from https://www.docker.com/products/docker-desktop/
+
 1.2 If you do not have an exisitng docker account, you can make one following this link https://hub.docker.com/signup
+
 1.3 After installing the application, please sign into docker desktop using your account 
 
 Note: Docker requires Linux to run. Windows users might get a pop up asking to install “Windows
 Subsystem for Linux” (WSL). Follow the instructions that appear on screen.
 
-## Step 2: Pull the docker image
-To retrieve the docker image, first open either of the following applications based on your operating system
+### Step 2: Pull the docker image
+To retrieve the docker image, first open either of the following applications based on your operating system:
+
 • MacOS and Ubuntu: Open the Terminal application.
+
 • Windows: Open the command prompt ‘cmd’
+
 Run the following commands in the terminal window (in order):
 ```
 docker login
@@ -122,12 +102,26 @@ docker run -p 8866:8866 -it carmvarriale/fm-lecture-notes
 Note: Windows users might have to add ‘winpty’ before the prompt, such as:
 winpty docker ...
 
-## Step 3: Running the notebooks locally
+### Step 3: Running the notebooks locally
 3.1 At this point, the docker container will be running and can be accessed more easily from docker desktop. Hence, navigate back to docker desktop, and go to 'containers' in the top left. 
+
 3.2 Make sure the docker container is running, if it is running correctly the first 'Actions' icon will be a square. (If it is not running it will be a triangle)
+
 3.3 Click on the port of the container. This will take you to localhost8866:8866 
 
 NOTE: If you have other jupyter notebooks or voila applications running locally, you may not be able to connect to localhost8866:8866. Hence, when deploying the notebooks it is reccommended to not have other jupyter servers open.
 
 3.4 To close the notebooks, simply close the web browser and stop the container. This can be done on docker desktop by clickling on the square icon under 'Actions'
 
+## Contributing
+State if you are open to contributions and what your requirements are for accepting them.
+
+For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+
+## Authors and acknowledgment
+Show your appreciation to those who have contributed to the project.
+
+## Project status
+If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
